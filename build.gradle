@@ -14,7 +14,7 @@ buildscript {
         sonarqubePluginVersion = "4.4.1.3373"
 
         // workaround for reckon issue with Java 8
-        grgitVersion = "5.2.1"
+        grgitVersion = "5.2.2"
 
         testngVersion = "6.4"
         jakartaVersion = "6.0.0"
