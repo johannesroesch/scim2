@@ -802,7 +802,8 @@ public class JsonUtilsTestCase
 
     JsonUtils.addValue(Path.root(), resource, value);
 
-    assertEquals(resource, expectedAddResult);
+    // Force testng to use object equals instead of iterator one, because the attributes are not in the same order
+    assertEquals((Object) resource, (Object) expectedAddResult);
 
     JsonNode expectedReplaceResult = JsonUtils.getObjectReader().
         readTree("{\n" +
@@ -832,7 +833,8 @@ public class JsonUtilsTestCase
 
     JsonUtils.replaceValue(Path.root(), resource, value);
 
-    assertEquals(resource, expectedReplaceResult);
+    // Force testng to use object equals instead of iterator one, because the attributes are not in the same order
+    assertEquals((Object) resource, (Object) expectedReplaceResult);
   }
 
 

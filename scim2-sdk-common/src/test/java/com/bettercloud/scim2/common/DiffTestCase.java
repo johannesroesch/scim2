@@ -90,7 +90,8 @@ public class DiffTestCase
       op.apply(source);
     }
     removeNullNodes(target);
-    assertEquals(source, target);
+    // Force testng to use object equals instead of iterator one, because the attributes are not in the same order
+    assertEquals((Object) source, (Object) target);
   }
 
   /**
@@ -324,7 +325,8 @@ public class DiffTestCase
             " not in target photo array " + targetPhotos);
       }
     }
-    assertEquals(source, target);
+    // Force testng to use object equals instead of iterator one, because the attributes are not in the same order
+    assertEquals((Object) source, (Object) target);
   }
 
   /**
@@ -496,7 +498,8 @@ public class DiffTestCase
       op.apply(source);
     }
     removeNullNodes(target);
-    assertEquals(source, target);
+    // Force testng to use object equals instead of iterator one, because the attributes are not in the same order
+    assertEquals((Object) source, (Object) target);
   }
 
   /**

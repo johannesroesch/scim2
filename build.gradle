@@ -16,7 +16,7 @@ buildscript {
         // workaround for reckon issue with Java 8
         grgitVersion = "5.2.2"
 
-        testngVersion = "6.4"
+        testngVersion = "7.9.0"
         jakartaVersion = "6.0.0"
         jakartaValidationVersion = "3.0.2"
 
