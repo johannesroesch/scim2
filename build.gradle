@@ -65,6 +65,6 @@ subprojects {
     apply from: rootProject.file('config/java.gradle')
 
     repositories {
-            mavenLocal()
+            mavenCentral()
     }
 }
