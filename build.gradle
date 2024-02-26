@@ -63,48 +63,5 @@ subprojects {
     group = "org.talend"
 
     apply from: rootProject.file('config/java.gradle')
-    apply from: rootProject.file('config/publish.gradle')
 
-    repositories {
-        mavenCentral()
-
-        maven {
-            url 'https://artifacts-zl.talend.com/nexus/content/repositories/tpsvc'
-            credentials {
-                username nexusUsername
-                password nexusPassword
-            }
-        }
-
-        maven {
-            url 'https://artifacts-zl.talend.com/nexus/content/repositories/releases/'
-            credentials {
-                username nexusTalendReleasesUsername
-                password nexusTalendReleasesPassword
-            }
-        }
-
-        maven {
-            url 'https://artifacts-zl.talend.com/nexus/content/repositories/snapshots/'
-            credentials {
-                username nexusTalendSnapshotsUsername
-                password nexusTalendSnapshotsPassword
-            }
-        }
-
-        maven {
-            url 'https://artifacts-zl.talend.com/nexus/content/groups/public'
-        }
-    }
-}
-
-// This task is used by Jenkinsfile
-tasks.register('versionInformation') {
-    doLast {
-        if (project.hasProperty("version")) {
-            new File("$projectDir/version.txt").text = "$version"
-        } else {
-            throw new GradleException('No version properties')
-        }
-    }
 }
